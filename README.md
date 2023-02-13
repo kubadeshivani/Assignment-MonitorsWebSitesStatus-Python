@@ -24,7 +24,9 @@ python3 -m connectivitychecker [options] [URLS_File.yaml]
 * <URL_File.yaml> is a mandatory path parameter when using url-file option. See `input/urls.yaml` for a sample configuration file.
 
 ## Example Run Configurations: 
+
 python3 -m connectivitychecker --url-file input/urls.yaml
+
 python3 -m connectivitychecker --urls http://www.wikipedia.org/ http://stackoverflow.com/ http://invalidurl.fi
 
 ## Notes :
