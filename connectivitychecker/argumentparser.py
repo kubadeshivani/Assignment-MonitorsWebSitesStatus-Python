@@ -4,13 +4,12 @@ import logging
 logger = logging.getLogger(__name__)
 
 def read_user_arguments():   
-    """Check the CLI arguments and options.""" 
-    print("-----check the availability of websites-----")
+    
+    print("............. Starting Website connectivity checker in continous loop. Use Ctrl+C to stop. .........")
     parser = argparse.ArgumentParser(
         prog="connectivitychecker", description="check the availability of websites"
     )
     parser.add_argument(
-        "-u",
         "--urls",
         metavar="URLs",
         nargs="+",
@@ -19,8 +18,7 @@ def read_user_arguments():
         help="Enter one or more website URLs",
     )
     parser.add_argument(
-        "-f",
-        "--input-file",
+        "--url-file",        
         metavar="FILE",
         type=str,
         default="",

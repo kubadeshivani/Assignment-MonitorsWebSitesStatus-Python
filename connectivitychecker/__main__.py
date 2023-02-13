@@ -40,8 +40,8 @@ def configure_file_logging(logger, level, log_path):
 # Get Website Urls from the user configuration file
 def get_websites_urls(user_args):
     urls = user_args.urls
-    if user_args.input_file:
-        urls = read_urls_from_configuration_file(user_args.input_file)
+    if user_args.url_file:
+        urls = read_urls_from_configuration_file(user_args.url_file)
     return urls
 
 
@@ -78,11 +78,9 @@ def run_connectivity_check(urls):
         
         probe_int= 10        
         logger.info("Starting connectivity checker in an infinite loop. Use Ctrl+C to stop.\n")
-
-        probe_index = 0
+        
         try:
-            while True:
-                logger.debug("Starting probe %d", probe_index + 1)
+            while True:                
                 connectivity_check(urls)
                 time.sleep(probe_int)
 

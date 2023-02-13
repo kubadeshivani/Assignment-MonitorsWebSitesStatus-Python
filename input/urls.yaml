@@ -1,29 +1,6 @@
 urls:
-  - url: http://www.google.fi
-  # Should result in 200 redirect
-    patterns:     
-      - <body
-      - </html>
-      - '"csi"'
-      - window\._\._
-  - url: http://invalid.fi
-  # Should result in 400 redirect
-    patterns:     
-      - <body
-      - </html>
-      - '"csi"'
-      - window\._\._
-  - url: http://invalid.org
-  # Should result in timeout redirect
-    patterns:     
-      - <body
-      - </html>
-      - '"csi"'
-      - window\._\._
+  - url: http://www.google.fi    
+  - url: http://stackoverflow.com/
+  - url: http://invalid.org  
   - url: http://en.wikipedia.org
-    # Should result in 301 redirect
-    patterns:
-      - <body
-      - </html>
-      - '"csi"'
-      - window\._\._
+  

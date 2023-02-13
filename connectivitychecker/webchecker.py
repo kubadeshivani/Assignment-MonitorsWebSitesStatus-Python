@@ -1,6 +1,5 @@
 import time
 import logging
-import http.client
 from http.client import HTTPConnection
 from urllib.parse import urlparse
 
@@ -20,19 +19,10 @@ def site_is_available(url, timeout=3):
         start_time = time.time()
         
         try:                    
-            connection.request("HEAD", "/")
+            connection.request("HEAD", "/")            
             response = connection.getresponse()
-            
-            if response.status == http.client.OK: 
-                content_type    = response.getheader('Content-Type')
-                if '=' in content_type:
-                    response_encoding = content_type.split('=')[1]                       
-
-                logger.debug("Get result with 'status': '%s'; 'Content-Type': '%s'; Detected charset: '%s' ", response.status,content_type,response_encoding)                
-                return True  
-            else:
-                logger.debug("Get result with 'status': '%s'", response.status)
-
+            logger.info(" 'Response Status': '%s' received for URL '%s'", response.status,url)                           
+            return True         
             
         except Exception as e:
             error = e   
