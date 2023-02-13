@@ -28,8 +28,7 @@ def site_is_available(url, timeout=3):
                 if '=' in content_type:
                     response_encoding = content_type.split('=')[1]                       
 
-                logger.debug("Get result with 'status': '%s'; 'Content-Type': '%s'; Detected charset: '%s' ", response.status,content_type,response_encoding)
-                page_content = response.read().decode(response_encoding)
+                logger.debug("Get result with 'status': '%s'; 'Content-Type': '%s'; Detected charset: '%s' ", response.status,content_type,response_encoding)                
                 return True  
             else:
                 logger.debug("Get result with 'status': '%s'", response.status)
